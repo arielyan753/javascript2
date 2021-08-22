@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+    <style>
+    body {
+        font-size: 20px;
+        margin-left: 38%;
+        }
+        
+        .container {
+          margin-top: 100px;
+          width: 360px;
+          background: rgb(52, 187, 228);
+          text-align: center;
+          border: 10px solid rgb(16, 29, 153);
+          border-radius: 10px;
+        }
+        
+        input[type=text] {
+          width: 20%;
+          padding: 12px 20px;
+          margin: 15px ;
+          box-sizing: border-box;
+          border: 1px solid white;
+          border-radius: 10px;
+        }
+        
+        .calcBut {
+          margin-top: 20px;
+          margin-bottom: 40px;
+          background-color: #070070;
+          border: 5px solid rgb(255, 0, 0);
+          border-radius: 10px;
+          color: white;
+          padding: 10px 15px;
+          text-align: center;
+          display: inline-block;
+          font-size: 18px;
+        
+        }
+        
+        .resetBut {
+          margin-top: 50px;
+          margin-bottom: 30px;
+          background-color: rgb(25, 13, 128);
+          border: 5px solid rgb(255, 0, 0);
+          border-radius: 10px;
+          color: white;
+          padding: 10px 15px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 18px;
+        
+        }
+        
+        img {
+          margin-top: 10px;
+          margin-bottom: 20px;
+        }
+        </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" method="get">
+            <img src="חישוב תמונה.jpg">
+            <div>Enter value for a: <input type="text" id="num_a"></div>
+            <div>Enter value for b: <input type="text" id="num_b"></div>
+            <div>Enter value for c: <input type="text" id="num_c"></div>
+            <div><button class="calcBut" onclick="calculate()">Calculate</button></div>
+            <span>x1 = <input type="text" id="numX1"></span>&nbsp;&nbsp;
+            <span>x2 = <input type="text" id="numX2"></span>
+            <div><button class="resetBut" onclick="reset()">Reset</button></div>
+        </form>
+    </div>
+
+    <script>
+                
+        const val_a = document.getElementById('num_a');
+        const val_b = document.getElementById('num_b');
+        const val_c = document.getElementById('num_c');
+
+        function calculate() {           
+
+            let sqrtPart = Math.sqrt(parseFloat(val_b.value) * parseFloat(val_b.value) - 4 * parseFloat(val_a.value) * parseFloat(val_c.value));
+            numX1.value = (parseFloat(-val_b.value) + sqrtPart) / (2 * parseFloat(val_a.value));
+            numX2.value = (parseFloat(-val_b.value) - sqrtPart) / (2 * parseFloat(val_a.value));
+        }
+     
+    </script>
+
+
+</body>
+</html>
